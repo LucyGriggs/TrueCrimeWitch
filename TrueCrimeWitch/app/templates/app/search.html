@@ -1,0 +1,21 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+
+    <div class="col-md-4">
+        <h2>Search Results </h2>
+    </div>
+    
+    <div class="col-md-4">
+        <ul>
+            {% for result in results %}
+                <li>{{result.title}}</li>
+            {% empty %}
+                <li>No Results Found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+{% endblock %}
