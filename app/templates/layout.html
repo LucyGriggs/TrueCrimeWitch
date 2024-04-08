@@ -3,40 +3,41 @@
 
     <head>
         <!-- favicons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
+        <link rel="apple-touch-icon" sizes="180x180" href="/app/static/favicon/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/app/static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/app/static/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/app/static/favicon/site.webmanifest">
 
+        <link rel="stylesheet" href="/app/static/styles.css">
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> True Crime Witch </title>
-        {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" /> {% endcomment %}
     </head>
 
     <body>
-        <nav>
-            <div>
-                <div>
-                    <form action="{% url 'search' %}" method="GET">
-                        <input type="text" name="q" placeholder="Search">
-                    </form>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="/" class="navbar-brand">True Crime Witch</a>
-                </div>
-                <div>
-                    <ul>
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'podcasts' %}">Podcasts</a></li>
-                        <li><a href="{% url 'about' %}">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div class="block1">
+            <nav class="navbar">
+                <button>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul>
+                    <li>
+                        <form action="{% url 'search' %}" method="GET">
+                            <input type="text" name="q" placeholder="Search">
+                        </form>
+                    </li>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'podcasts' %}">Podcasts</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    
+                </ul>
+            </nav>
+            <h1 class="h1">True Crime Witch</h1>
+        </div>
+        
+
         {% block content %}
         <!-- CONTENT HERE -->
         {% endblock content %}
