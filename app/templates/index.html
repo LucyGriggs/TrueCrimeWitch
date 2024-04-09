@@ -7,16 +7,15 @@
     {% for post in post_list %}
         <div>
             <ul class="gallery">
-                <img src="{{post.image}}" alt="image not found">
-                <h2>{{ post.title }}</h2>
-                <p>{{ post.author }} | {{ post.created_on}} </p>
-                <p>{{post.content|slice:":200"}}</p>
-                <a href="{% url 'post_detail' post.slug  %}">Read More... &rarr;</a>
+                <a href="{% url 'post_detail' post.slug  %}">
+                    <img class="img" src="{{post.image}}" alt="image not found">
+                    <h2 class="ph">{{ post.title }}</h2>
+                    <p class="pi">{{ post.author }} | {{ post.created_on}} </p>
+                    <p class="p">{{post.content|slice:":145"}} ... </p>
+                </a>
             </ul>
         </div>
     {% endfor %}
 </div>
 
 {% endblock %}
-
-{% comment %} https://www.w3schools.com/css/css_image_gallery.asp {% endcomment %}

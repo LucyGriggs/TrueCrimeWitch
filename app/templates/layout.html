@@ -17,35 +17,38 @@
     <body>
         <div class="block1">
             <nav class="navbar">
-                <button>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <ul>
                     <li>
                         <form action="{% url 'search' %}" method="GET">
                             <input type="text" name="q" placeholder="Search">
                         </form>
                     </li>
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'podcasts' %}">Podcasts</a></li>
                     <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    {% comment %} <li><a href="{% url 'podcasts' %}">Podcasts</a></li> {% endcomment %}
                     
                 </ul>
+                <h1 class="h1">True Crime Witch</h1>
             </nav>
-            <h1 class="h1">True Crime Witch</h1>
         </div>
         
-
         {% block content %}
         <!-- CONTENT HERE -->
         {% endblock content %}
 
-        <footer>
-            <p>&copy; {{ year }} : TrueCrimeWitch</p>
-        </footer>
-
     </body>
+    <footer>
+        <nav class="footbar">
+            <ul>
+                <li><a href="https://www.facebook.com/truecrimewitchh"><img class="sm" src="/app/static/icons/facebook.png"></a></li>
+                <li><a href="https://twitter.com/truecrimewitch"><img class="sm" src="/app/static/icons/twitter.png"></a></li>
+                <li><a href="https://www.tumblr.com/truecrimewitch"><img class="sm" src="/app/static/icons/tumblr.png"></a></li>
+                <li><a href="https://www.instagram.com/truecrimewitch/"><img class="sm" src="/app/static/icons/instagram.png"></a></li>              
+            </ul>
+            <p>&copy; {{ dateTime.year }} : TrueCrimeWitch</p>
+        </nav>
+    </footer>
 
 </html>
+ 
+

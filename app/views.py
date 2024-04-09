@@ -40,19 +40,6 @@ def about(request):
             'year':datetime.now().year,
         }
     )
-
-def podcasts(request):
-    """Renders the podcasts page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'podcasts.html',
-        {
-            'title':'Podcasts',
-            'message':'List of Podcast Episodes',
-            'year':datetime.now().year,
-        }
-    )
     
 def post(request):
     """Renders the post page."""
@@ -70,9 +57,8 @@ def search(request):
     """Renders the search function."""
     assert isinstance(request, HttpRequest)
     query = request.GET.get('q')
-    podcast_results = Podcast.objects.filter(title__icontains=query)
     blog_results = Index.objects.filter(title__icontains=query)
-    results = list(podcast_results) + list(blog_results)
+    results = list(blog_results)
     return render(request,
         'search.html',
         {

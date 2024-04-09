@@ -15,7 +15,6 @@ urlpatterns = [
     path('', include('app.urls')),
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
-    path('podcasts/', views.podcasts, name='podcasts'),
     path('search/', views.search, name='search'),
     path('post/', views.post, name='post'),
     
