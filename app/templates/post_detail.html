@@ -1,17 +1,15 @@
 {% extends "layout.html" %}
+{% load static %}
 {% block content %}
 
-<div>
+{% for post in object_list %}
     <div>
-        <div>
-            <div>
-                <img src="{{post.image}}" alt="image not found">
-                <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
-                <p>{{ post.author }} | {{ post.created_on }}</p>
-                <p>{{ object.content | safe }}</p>
-            </div>
-        </div>
+        <h1>{% block title %}{{ post.title }}{% endblock title %}</h1>
+        <img src="{{post.image}}" alt="image not found">
+        <p>{{ post.author }} | {{ post.created_on }}</p>
+        <p>{{ post.content | safe }}</p>
+        <p>{{ post.author }} | {{ post.created_on }}</p>
     </div>
-</div>
+{% endfor %}
   
 {% endblock content %}
