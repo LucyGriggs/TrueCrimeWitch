@@ -2,24 +2,25 @@
 {% load static %}
 {% block content %}
 
-<div>
-    <h2>Search Results </h2>
+<div class="block3">
+    <p>Search Results for "{{ query }}" </p>
 </div>
 
 <div>
     <ul class="gallery">
-        {% for post in object_list %}
+        {% for result in result %}
             <li>
-                <a href="{% url 'search_results' post.slug  %}">
-                <h2 class="ph">{{ post.title }}</h2>
-                <p class="pi">{{ post.author }} | {{ post.created_on}} </p>
+                <a href="{% url 'search_results' result.slug  %}">
+                    <img class="img" src="{{results.image}}" alt="image not found">
+                    <h2 class="ph">{{ result.title }}</h2>
+                    <p class="pi">{{ result.author }} | {{ result.created_on}} </p>
+                    <p class="p">{{result.content|slice:":95"}} ... </p>
                 </a>
             </li>
         {% empty %}
-            <li>No Results Found.</li>
+            <p> No Results Found.</p>
+            <img class="img2" src="{% static '/images/EmptySearch.png' %}" alt="image not found">
         {% endfor %}
-
-        <p> test </p>
     </ul>
 </div>
 

@@ -21,6 +21,7 @@
                     <li>
                         <form action="{% url 'search_results' %}" method="GET">
                             <input type="text" name="q" placeholder="Search">
+                            <button class="button" type="submit"><img class="sm2" src="/app/static/icons/search.png"></button>
                         </form>
                     </li>
                     <li><a href="{% url 'about' %}">About</a></li>
@@ -28,8 +29,8 @@
                     {% comment %} <li><a href="{% url 'podcasts' %}">Podcasts</a></li> {% endcomment %}
                     
                 </ul>
-                <h1 class="h1">True Crime Witch</h1>
             </nav>
+            <h1 class="h1">True Crime Witch</h1>
         </div>
         
         {% block content %}
@@ -45,7 +46,7 @@
                 <li><a href="https://www.tumblr.com/truecrimewitch"><img class="sm" src="/app/static/icons/tumblr.png"></a></li>
                 <li><a href="https://www.instagram.com/truecrimewitch/"><img class="sm" src="/app/static/icons/instagram.png"></a></li>              
             </ul>
-            <p>&copy; {{ dateTime.year }} : TrueCrimeWitch</p>
+            <p>&copy; {% now 'Y' %} : TrueCrimeWitch | Created by github.com/LucyGriggs</p>
         </nav>
     </footer>
 

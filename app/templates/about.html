@@ -2,8 +2,31 @@
 {% load static %}
 {% block content %}
 
-<h2>{{ title }}.</h2>
-
-<p>I write murder mystery posts</p>
+    <div class="wrap">
+        <img class="img3" src="{% static '/images/Podcast_Logo_1400_x_1400_px.png' %}">
+    </div>
+    <div class="wraptext">
+        <p>Welcome to True Crime Witch, your digital haven for delving into the darkest mysteries of the human psyche. I'm Emma, your guide through the labyrinth of real-life tales that captivate and chill us to the bone.</p>
+        <h2>Unveiling the Shadows:</h2>
+        <p>True Crime Witch isn't just a blog; it's a passion-fueled journey into the heart of darkness. As a writer, freelancer, podcaster, and YouTuber, I wear many hats in my quest to unravel the enigmatic tapestry of true crime. From notorious cases that have gripped the world to obscure gems waiting to be unearthed, I dive deep into the stories that both shock and fascinate.</p>
+        <h2>Beyond the Headlines:</h2>
+        <p>This is more than just headlines and police reports. It's a platform where we explore the intricacies of human nature, the flaws in our society, and the pursuit of justice in an often unjust world. Through my articles, podcasts, and videos, I aim to spark conversations, provoke thought, and shed light on the untold narratives lurking beneath the surface.</p>
+        <h2>About Emma:</h2>
+        <p>As the mastermind behind True Crime Witch, I've dedicated my life to unraveling the mysteries that keep us up at night. With a background in writing and a passion for storytelling, I'm committed to bringing you the most captivating and thought-provoking content imaginable. From the pages of history to the streets of modern-day crime, I leave no stone unturned in my quest for truth.</p>
+        <h2>Embrace the Unknown:</h2>
+        <p>True Crime Witch isn't just a blog—it's a state of mind. It's about embracing the unknown, confronting our fears, and finding solace in the shared experience of exploring the darkness that resides within us all. So come, fellow wanderer, and let us embark on this journey together. The shadows await.</p>
+    </div>
+        <div class="contactcontainer">
+            <h2>Let's Connect:<h2>
+            <form>
+                <label for="name">Name</label><br>
+                <input type="text" id="name" placeholder="Preferred name"><br>
+                <label for="email">E-Mail</label><br>
+                <input type="text" id="email" placeholder="Your E-Mail"><br>
+                <label for="message">Message</label><br>
+                <input type="textarea" id="message" placeholder="Type your message here..."><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
 
 {% endblock %}
