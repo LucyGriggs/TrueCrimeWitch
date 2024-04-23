@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+
+<div>
+    {% for podcasts in podcasts_list %}
+        <div>
+            <ul>
+                <h2>{{ podcasts.titlepod }}</h2>
+                <a href="{{ podcasts.spotify }}"><img src="/app/static/icons/spotify.png"></a>
+                <a href="{{ podcasts.apple }}"><img src="/app/static/icons/apple.png"></a>
+                <a href="{{ podcasts.spreaker }}"><img src="/app/static/icons/spreaker.png"></a>
+                <a href="{{ podcasts.castbox }}"><img src="/app/static/icons/castbox.png"></a>
+                <p>{{ podcasts.authorpod }} | {{ podcasts.created_on}} </p>
+                <p>{{ podasts.contentpod | slice:"50" }}</p>
+            </ul>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

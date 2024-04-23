@@ -8,13 +8,13 @@
 
 <div>
     <ul class="gallery">
-        {% for result in result %}
+        {% for post in object_list %}
             <li>
-                <a href="{% url 'search_results' result.slug  %}">
-                    <img class="img" src="{{results.image}}" alt="image not found">
-                    <h2 class="ph">{{ result.title }}</h2>
-                    <p class="pi">{{ result.author }} | {{ result.created_on}} </p>
-                    <p class="p">{{result.content|slice:":95"}} ... </p>
+                <a href="{% url 'search_results' %}">
+                    <img class="img" src="{{post.image.url}}" alt="image not found">
+                    <h2 class="ph">{{ post.title }}</h2>
+                    <p class="pi">{{ post.author }} | {{ post.created_on}} </p>
+                    <p class="p">{{post.content|slice:":95"}} ... </p>
                 </a>
             </li>
         {% empty %}

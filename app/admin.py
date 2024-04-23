@@ -10,3 +10,12 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
 
 admin.site.register(Post, PostAdmin)
+
+from .models import Podcasts
+
+class PodcastAdmin(admin.ModelAdmin):
+    list_display = ('titlepod', 'statuspod', 'created_on', 'apple', 'spotify', 'spreaker', 'castbox')
+    list_filter = ('statuspod',)
+    search_fields = ['titlepod', 'contentpod']
+    
+admin.site.register(Podcasts, PodcastAdmin)

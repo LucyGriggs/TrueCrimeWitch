@@ -18,6 +18,18 @@ class Post(models.Model):
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     image = models.FileField(upload_to='app/static/uploads/')
+
+class Podcasts(models.Model):
+    titlepod = models.CharField(max_length=200, unique=True)
+    authorpod = models.ForeignKey(User, on_delete=models.CASCADE, related_name='podcast_posts')
+    created_on = models.DateTimeField(auto_now_add=True)
+    contentpod = models.TextField()
+    statuspod = models.IntegerField(choices=STATUS, default=0)
+    # urls
+    apple = models.CharField(max_length=240)
+    spotify = models.CharField(max_length=240)
+    spreaker = models.CharField(max_length=240)
+    castbox = models.CharField(max_length=240)
     
 class Meta:
     ordering = ['-created_on']
