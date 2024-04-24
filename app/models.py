@@ -18,11 +18,15 @@ class Post(models.Model):
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     image = models.FileField(upload_to='app/static/uploads/')
+    
+    class Meta:
+        ordering = ['-created_on']
 
-class Podcasts(models.Model):
+class Podcast(models.Model):
     titlepod = models.CharField(max_length=200, unique=True)
     authorpod = models.ForeignKey(User, on_delete=models.CASCADE, related_name='podcast_posts')
     created_on = models.DateTimeField(auto_now_add=True)
+    lengthpod = models.CharField("Podcast length mm:ss", max_length=5)
     contentpod = models.TextField()
     statuspod = models.IntegerField(choices=STATUS, default=0)
     # urls
@@ -31,8 +35,8 @@ class Podcasts(models.Model):
     spreaker = models.CharField(max_length=240)
     castbox = models.CharField(max_length=240)
     
-class Meta:
-    ordering = ['-created_on']
+    class Meta:
+        ordering = ['-created_on']
 
 def __str__(self):
     return self.title

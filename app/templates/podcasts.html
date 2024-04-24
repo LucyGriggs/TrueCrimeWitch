@@ -3,7 +3,7 @@
 {% block content %}
 
 <div>
-    {% for podcasts in podcasts_list %}
+    {% for podcasts in podcast_list %}
         <div>
             <ul>
                 <h2>{{ podcasts.titlepod }}</h2>
@@ -11,8 +11,9 @@
                 <a href="{{ podcasts.apple }}"><img src="/app/static/icons/apple.png"></a>
                 <a href="{{ podcasts.spreaker }}"><img src="/app/static/icons/spreaker.png"></a>
                 <a href="{{ podcasts.castbox }}"><img src="/app/static/icons/castbox.png"></a>
-                <p>{{ podcasts.authorpod }} | {{ podcasts.created_on}} </p>
-                <p>{{ podasts.contentpod | slice:"50" }}</p>
+                <p>{{ podcasts.authorpod }} | {{ podcasts.lengthpod}} </p>
+                <p> {{ podcasts.created_on}} </p>
+                <p>{{ podcasts.contentpod | slice:"50" }}</p>
             </ul>
         </div>
     {% endfor %}

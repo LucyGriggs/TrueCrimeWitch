@@ -4,7 +4,7 @@ Definition of views.
 
 from typing import Any
 from django.shortcuts import render
-from .models import Post, Podcasts
+from .models import Post, Podcast
 from django.views.generic import ListView, TemplateView
 from django.db.models import Q
 from datetime import datetime
@@ -15,7 +15,7 @@ class PostView(ListView):
   template_name = 'index.html'
   
 class PodcastsView(ListView):
-  queryset = Podcasts.objects.filter(statuspod=1).order_by('-created_on')
+  queryset = Podcast.objects.filter(statuspod=1).order_by('-created_on')
   template_name = 'podcasts.html'
   
 class SearchView(ListView):

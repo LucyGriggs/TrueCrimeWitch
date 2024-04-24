@@ -11,11 +11,11 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 
-from .models import Podcasts
+from .models import Podcast
 
 class PodcastAdmin(admin.ModelAdmin):
-    list_display = ('titlepod', 'statuspod', 'created_on', 'apple', 'spotify', 'spreaker', 'castbox')
+    list_display = ('titlepod', 'statuspod', 'lengthpod', 'created_on',  'apple', 'spotify', 'spreaker', 'castbox')
     list_filter = ('statuspod',)
     search_fields = ['titlepod', 'contentpod']
     
-admin.site.register(Podcasts, PodcastAdmin)
+admin.site.register(Podcast, PodcastAdmin)
